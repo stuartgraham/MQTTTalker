@@ -4,7 +4,6 @@ import os
 import json
 import subprocess 
 import datetime
-import settings
 import logging
 
 # .ENV FILE FOR TESTING
