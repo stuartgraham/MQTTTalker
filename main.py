@@ -7,9 +7,9 @@ import datetime
 import logging
 
 # .ENV FILE FOR TESTING
-#if os.path.exists('.env'):
-#    from dotenv import load_dotenv
-#    load_dotenv()
+if os.path.exists('.env'):
+    from dotenv import load_dotenv
+    load_dotenv()
 
 # GLOBALS
 MQTT_BROKER = os.environ.get('MQTT_BROKER','')
@@ -17,7 +17,11 @@ MQTT_PORT = int(os.environ.get('MQTT_PATH', 1883))
 MQTT_PUB_TOPIC = os.environ.get('MQTT_PUB_TOPIC','')
 MQTT_SUB_TOPIC = os.environ.get('MQTT_SUB_TOPIC','')
 
-TRIGGERS = json.dumps('triggers.json')
+
+with open('triggers.json') as json_file:
+    TRIGGERS = json.load(json_file)
+
+
 
 def update_mute_timers(category, initialise=False):
     global mute_timers
