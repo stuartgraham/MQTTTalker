@@ -1,10 +1,10 @@
 {
-    "person":{"confidence" : 0.95, "mute" : 2},
-    "car":{"confidence" : 0.95, "mute" : 5},
-    "unknown":{"confidence" : 0.95, "mute" : 5},
-    "test":{"confidence" : 0.00001, "mute" : 0.1},
-    "motorcycle":{"confidence" : 0.95, "mute" : 5},
-    "bird":{"confidence" : 0.95, "mute" : 5},
-    "cat":{"confidence" : 0.95, "mute" : 5},
-    "dog":{"confidence" : 0.95, "mute" : 5}
+    "person":{"confidence" : 0.95, "mute" : 2, "overnight" : true},
+    "car":{"confidence" : 0.95, "mute" : 5, "overnight" : true},
+    "unknown":{"confidence" : 0.95, "mute" : 5, "overnight" : true},
+    "test":{"confidence" : 0.00001, "mute" : 0.1, "overnight" : true},
+    "motorcycle":{"confidence" : 0.95, "mute" : 5, "overnight" : true},
+    "bird":{"confidence" : 0.95, "mute" : 5, "overnight" : false},
+    "cat":{"confidence" : 0.95, "mute" : 5, "overnight" : false},
+    "dog":{"confidence" : 0.95, "mute" : 5, "overnight" : false}
 }

@@ -22,7 +22,6 @@ with open('triggers.json') as json_file:
     TRIGGERS = json.load(json_file)
 
 
-
 def update_mute_timers(category, initialise=False):
     global mute_timers
     try:
@@ -70,6 +69,15 @@ def action_message(category, confidence):
     logging.debug("trigger_mute : {}".format(str(trigger_mute))) 
     trigger_confidence = TRIGGERS[category]['confidence']
     logging.debug("trigger_confidence : {}".format(str(trigger_confidence)))
+    trigger_overnight = bool(TRIGGERS[category]['overnight'])
+    logging.debug("trigger_overnight : {}".format(str(trigger_confidence)))
+    # Break if the overnight mode
+    if trigger_overnight == False:
+        now_time = now.time()
+        if now_time >= datetime.time(21,00) or now_time <= datetime.time(9,00):
+            logging.info("Category : {} detected, however in mute period because of overnight mode".format(category))
+            return
+    # Send if high confidence on match
     if confidence > trigger_confidence:
         delta = now - datetime.timedelta(minutes=trigger_mute)
         logging.debug("delta : {}".format(str(delta)))
