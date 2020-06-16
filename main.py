@@ -104,7 +104,7 @@ def main():
     for i in TRIGGERS:
         update_mute_timers(i, initialise=True)
 
-    logging.basicConfig(filename='mqtttalker.log', level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s %(message)s')
     logging.info("STARTING MQTT Talker")
     client = paho.Client("mqtt-talkerbot")
     client.on_connect = on_connect
