@@ -1,6 +1,6 @@
 {
     "person":{"confidence" : 0.95, "mute" : 2, "overnight" : true},
-    "car":{"confidence" : 0.95, "mute" : 5, "overnight" : true},
+    "car":{"confidence" : 0.95, "mute" : 5, "overnight" : false},
     "unknown":{"confidence" : 0.95, "mute" : 5, "overnight" : true},
     "test":{"confidence" : 0.00001, "mute" : 0.1, "overnight" : true},
     "motorcycle":{"confidence" : 0.95, "mute" : 5, "overnight" : true},
